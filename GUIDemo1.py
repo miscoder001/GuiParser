@@ -6,6 +6,12 @@ from tkinter import Label
 from tkinter import Button
 from tkinter import *
 
+#
+def URLGetClick():  # 下載網頁
+    response = requests.get(url="https://tw.stock.yahoo.com/")
+    print(response.text)
+#
+
 win = Tk()  # 建立視窗物件
 win.title("這是視窗版爬蟲範例")
 win.geometry("800x600") # 呼叫 geometry 設定視窗大小
@@ -18,7 +24,7 @@ lab2.pack()
 urlEntry = Entry(win, font=('Arial',15), fg='blue')
 urlEntry.pack()
 #第三個物件 : 按鈕
-okBtn = Button(win ,font=('Arial',15), text="下載" , fg='blue', state='disabled')
+okBtn = Button(win ,font=('Arial',15), text="下載" , fg='blue', command=URLGetClick)
 okBtn.pack()
 #win.resizable(0,0)
 
@@ -26,5 +32,4 @@ okBtn.pack()
 win.mainloop()   # 啟動視窗執行 並無窮執行直到 user關閉
 # mainloop 是無窮迴圈 寫在下方的程式 無法執行
 
-#response = requests.get(url="https://tw.stock.yahoo.com/")
-# print(response.text)
+#

@@ -52,11 +52,11 @@ _2454PVar = StringVar()
 winFrame = Frame(win)
 btnFrame = Frame(win)
 # 加入標籤
-lab1 = Label(winFrame,text="台積電:" , font=('Arial',15), bg="yellow", fg="blue")   #第一個加入視窗 winFrame 的物件
+lab1 = Label(winFrame,text="台積電:", font=('Arial',15), bg="yellow", fg="blue")   #第一個加入視窗 winFrame 的物件
 lab1.grid(column=0, row=0, padx=10)
-lab2 = Label(winFrame, text="智邦:" , font=('Arial',15), bg="yellow", fg="blue")   #第一個加入視窗 winFrame 的物件
+lab2 = Label(winFrame, text="智邦:", font=('Arial',15), bg="yellow", fg="blue")
 lab2.grid(column=0, row=1, padx=10)
-lab3 = Label(winFrame, text="聯發科:" , font=('Arial',15), bg="yellow", fg="blue")   #第一個加入視窗 winFrame 的物件
+lab3 = Label(winFrame, text="聯發科:", font=('Arial',15), bg="yellow", fg="blue")
 lab3.grid(column=0, row=2, padx=10)
 #加入 股票文字框輸入
 _2330Price = Entry(winFrame, font=('Arial',15), fg='red',width=10, textvariable=_2330PVar) # 將 entry與 StrigVar綁定後  修改StringVar 的值主動會更新到視窗畫面中
@@ -65,25 +65,16 @@ _2345Price = Entry(winFrame, font=('Arial',15), fg='red',width=10, textvariable=
 _2345Price.grid(column=1,row=1)
 _2454Price = Entry(winFrame, font=('Arial',15), fg='red',width=10, textvariable=_2454PVar)
 _2454Price.grid(column=1,row=2)
-# 顯示在畫面上
-#lab1.pack()
-#lab2.pack()
-#lab3.pack()
-#_2330Price.pack()
-#_2345Price.pack()
-#_2545Price.pack()
 # 請注意 lab3 用 textvariable 與動態變數綁定 只要變數改變 訊息就會顯示在 畫面上
-#第三個物件 : 按鈕
+
+#按鈕物件建立
 okBtn = Button(btnFrame ,font=('Arial',15), text="更新" , fg='blue', command=StockQueryClick)
 okBtn.grid(column=0, row=0, padx=10)
-#okBtn.pack()
 closeBtn = Button(btnFrame ,font=('Arial',15), text="停止" , fg='blue', command=CloseAppClick)
 closeBtn.grid(column = 1, row = 0)
-#clearBtn.pack()
-
-#win.resizable(0,0)
 
 
+#win.resizable(0,0) #鎖定使用者改變視窗大小
 winFrame.pack()
 btnFrame.pack()
 win.mainloop()   # 啟動視窗執行 並無窮執行直到 user關閉

@@ -58,6 +58,9 @@ class App:
     def GButton_506_command(self):
         ua = {"user-agent": "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:77.0) Gecko/20190101 Firefox/77.0"}
         bookPage = pq(url="https://www.tenlong.com.tw/zh_tw/recent" , encoding="utf8", headers=ua)
+        pageLinks = bookPage.find("div.pagination a").items()
+        for alnk in pageLinks:
+            print( alnk.attr('href') )
         #取出網頁內的 div.list-wrapper 內容
         bookList = bookPage.find('div.list-wrapper')
         #取出所有 li 項目

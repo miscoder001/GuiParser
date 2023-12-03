@@ -21,7 +21,7 @@ def clearURLEntry():
     urlEntry.delete(0,5)
 #
 # 動態變數 必須要在 Tk() 產生後才可以宣告
-dataVar = StringVar()
+#dataVar = StringVar()
 
 win = Tk()  # 建立視窗物件
 
